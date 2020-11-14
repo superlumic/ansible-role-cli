@@ -69,9 +69,9 @@ function kmerge() {
   KUBECONFIG=~/.kube/config:$1 kubectl config view --flatten > ~/.kube/mergedkub && mv ~/.kube/mergedkub ~/.kube/config
 }
 
-source /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh
-source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+#source /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh
+#source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
+#source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 zplug "zpm-zsh/ssh"
 zplug "b4b4r07/enhancd"
@@ -79,7 +79,7 @@ zplug "zpm-zsh/colorize"
 zplug "dbz/kube-aliases"
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "srijanshetty/node.plugin.zsh"
-zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
+#zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
@@ -105,4 +105,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #RPROMPT='($(git_super_status)) %{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'                                                                                                                                                                                                                                          
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+#[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+eval "$(starship init zsh)"
